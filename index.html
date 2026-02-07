@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Mali:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Placeholder for icons -->
+</head>
+
+<body>
+
+    <!-- Asset Preloader (Hidden) -->
+    <div id="preloader" class="hidden"></div>
+
+    <!-- VIEW 1: LANDING HEART -->
+    <section id="view-landing" class="view active">
+        <div class="heart-container" onclick="nextView('view-login')">
+            <div class="heart"></div>
+            <p class="click-instruction">Click the heart ❤️</p>
+        </div>
+    </section>
+
+    <!-- VIEW 2: LOGIN PASSCODE -->
+    <section id="view-login" class="view hidden">
+        <div class="login-container">
+            <div class="login-left">
+                <!-- User should replace this image -->
+                <img src="images/S__114229252.jpg" alt="Cute decoration" class="deco-img">
+            </div>
+            <div class="login-right">
+                <h2>Enter Passcode</h2>
+                <div class="passcode-display">
+                    <span class="dot" id="dot-1"></span>
+                    <span class="dot" id="dot-2"></span>
+                    <span class="dot" id="dot-3"></span>
+                    <span class="dot" id="dot-4"></span>
+                </div>
+                <div class="keypad">
+                    <button onclick="addDigit(1)">1</button>
+                    <button onclick="addDigit(2)">2</button>
+                    <button onclick="addDigit(3)">3</button>
+                    <button onclick="addDigit(4)">4</button>
+                    <button onclick="addDigit(5)">5</button>
+                    <button onclick="addDigit(6)">6</button>
+                    <button onclick="addDigit(7)">7</button>
+                    <button onclick="addDigit(8)">8</button>
+                    <button onclick="addDigit(9)">9</button>
+                    <button class="clear-btn" onclick="clearDigits()">C</button>
+                    <button onclick="addDigit(0)">0</button>
+                    <button class="back-btn" onclick="nextView('view-landing')">↩</button>
+                </div>
+                <p id="error-msg" class="hidden">Wrong passcode 😢 Try our date!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIEW 3: DASHBOARD -->
+    <section id="view-dashboard" class="view hidden">
+        <h1 class="dashboard-title">Welcome My Love</h1>
+        <div id="dashboard-clock" class="dashboard-clock"></div>
+        <div class="dashboard-grid">
+            <div class="card" onclick="nextView('view-memories')">
+                <div class="icon">📸</div>
+                <h3>One Memories</h3>
+            </div>
+            <div class="card" onclick="nextView('view-calendar')">
+                <div class="icon">📅</div>
+                <h3>Calendar</h3>
+            </div>
+            <div class="card" onclick="nextView('view-game')">
+                <div class="icon">🧩</div>
+                <h3>Love Game</h3>
+            </div>
+            <div class="card" onclick="nextView('view-message')">
+                <div class="icon">💌</div>
+                <h3>Message</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURE 1: MEMORIES -->
+    <section id="view-memories" class="view hidden">
+        <button class="back-home" onclick="nextView('view-dashboard')">🏠 Home</button>
+        <div class="polaroid-container">
+            <div class="polaroid">
+                <!-- User should replace this video or image -->
+                <div class="media-content">
+                    <video controls src="videos/792147836.235721.mp4" style="width:100%"></video>
+                </div>
+                <div class="caption">รักที่สุดเยยนะคะไอดื้อของพี่ ✨</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURE 2: CALENDAR -->
+    <section id="view-calendar" class="view hidden">
+        <button class="back-home" onclick="nextView('view-dashboard')">🏠 Home</button>
+        <div class="calendar-content">
+            <h2>One Memories</h2>
+            <h3>How long have we been together?</h3>
+            <div class="main-image-container">
+                <img src="images/S__114229257.jpg" alt="Us">
+                <button class="view-cal-btn" onclick="nextView('view-love-calendar')">View Calendar</button>
+            </div>
+            <div id="timer" class="timer">
+                <div class="time-box"><span id="years">0</span> Years</div>
+                <div class="time-box"><span id="months">0</span> Months</div>
+                <div class="time-box"><span id="days">0</span> Days</div>
+                <div class="time-box"><span id="hours">0</span> Hrs</div>
+                <div class="time-box"><span id="minutes">0</span> Mins</div>
+                <div class="time-box"><span id="seconds">0</span> Secs</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW VIEW: LOVE YEAR CALENDAR GRID -->
+    <section id="view-love-calendar" class="view hidden">
+        <button class="back-home" onclick="nextView('view-calendar')">⬅ Back</button>
+        <div class="calendar-content">
+            <h2>Our Love Year</h2>
+            <div class="month-grid">
+                <!-- 12 Months Placeholders -->
+                <div class="month-card">Jan <img src="https://placehold.co/80/80?text=Jan" alt="Jan"></div>
+                <div class="month-card">Feb <img src="https://placehold.co/80/80?text=Feb" alt="Feb"></div>
+                <div class="month-card">Mar <img src="https://placehold.co/80/80?text=Mar" alt="Mar"></div>
+                <div class="month-card">Apr <img src="https://placehold.co/80/80?text=Apr" alt="Apr"></div>
+                <div class="month-card">May <img src="https://placehold.co/80/80?text=May" alt="May"></div>
+                <div class="month-card">Jun <img src="https://placehold.co/80/80?text=Jun" alt="Jun"></div>
+                <div class="month-card">Jul <img src="https://placehold.co/80/80?text=Jul" alt="Jul"></div>
+                <div class="month-card">Aug <img src="https://placehold.co/80/80?text=Aug" alt="Aug"></div>
+                <div class="month-card">Sep <img src="https://placehold.co/80/80?text=Sep" alt="Sep"></div>
+                <div class="month-card">Oct <img src="https://placehold.co/80/80?text=Oct" alt="Oct"></div>
+                <div class="month-card">Nov <img src="https://placehold.co/80/80?text=Nov" alt="Nov"></div>
+                <div class="month-card">Dec <img src="https://placehold.co/80/80?text=Dec" alt="Dec"></div>
+            </div>
+        </div>
+    </section>
+    </div>
+    </section>
+
+    <!-- FEATURE 3: LOVE GAME -->
+    <section id="view-game" class="view hidden">
+        <button class="back-home" onclick="nextView('view-dashboard')">🏠 Home</button>
+        <h2>Complete the Puzzle for a Reward! 🧩</h2>
+        <div class="game-container">
+            <div class="reference-image">
+                <p>Goal:</p>
+                <img src="images/S__114229252.jpg" alt="Puzzle Goal">
+            </div>
+            <div class="game-area">
+                <div class="puzzle-board" id="puzzle-board">
+                    <!-- Drop Zones -->
+                </div>
+                <div class="pieces-container" id="pieces-container" ondragover="event.preventDefault()"
+                    ondrop="handleDrop(event)">
+                    <!-- Draggable Pieces -->
+                </div>
+                <!-- Reset Button -->
+                <button onclick="initGame()"
+                    style="margin-top:20px; background:#ff8fa3; color:white; padding:10px 20px; border-radius:10px; border:none; cursor:pointer;">Reset
+                    Puzzle 🔄</button>
+            </div>
+        </div>
+        <div id="game-success" class="popup hidden">
+            <div class="popup-content">
+                <h3>เก่งที่เยยคนเก่งของเค้า 🎉</h3>
+                <p>รางวัลคือ เค้าเอง >< ❤️</p>
+                        <button onclick="document.getElementById('game-success').classList.add('hidden')">Close</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURE 4: MESSAGE -->
+    <section id="view-message" class="view hidden">
+        <button class="back-home" onclick="nextView('view-dashboard')">🏠 Home</button>
+        <div class="envelope-container" onclick="openEnvelope()">
+            <div class="envelope">
+                <div class="letter">
+                    <p style="font-size: 2rem; margin-top: 100px;">For You ❤️</p>
+                </div>
+                <!-- Pockets covering the letter -->
+                <div class="pocket-left"></div>
+                <div class="pocket-right"></div>
+                <div class="pocket-bottom"></div>
+                <div class="flap"></div>
+            </div>
+            <p class="click-hint">Tap to Open</p>
+        </div>
+
+        <!-- Letter Modal -->
+        <div id="letter-modal" class="popup hidden" onclick="if(event.target === this) this.classList.add('hidden')">
+            <div class="popup-content letter-content">
+                <button class="close-btn"
+                    onclick="document.getElementById('letter-modal').classList.add('hidden')">✖</button>
+                <div class="paper">
+                    <p>พี่ดีใจมากๆนะ ที่มีหนูน้อย</p>
+                    <p>ไม่เคยรักหนูน้อยลงเลย มีแต่มากขึ้นๆ และเพิ่มขึ้นทุกๆวัน</p>
+                    <p>ไม่อยากเสียไปเลยแม้แต่วินาที ไม่เคยเบื่อไม่เคยอยากเลิกเลย</p>
+                    <p>หนูน้อยคือคนที่พิเศษที่สุดของพี่ พี่จะยอมทำทุกอย่างเพื่อให้มีหนูน้อย</p>
+                    <p>พี่จะปรับปรุงตัวให้ดีขึ้นเพื่อมีหนูตลอดไปนะ</p>
+                    <p>จุ้ฟๆ รักหนูน้อย 💚🤍</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
