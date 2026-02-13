@@ -358,21 +358,34 @@ button:active {
 .month-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 15px;
+    /* Increased gap */
     margin-top: 20px;
 }
 
 .month-card {
     background: white;
-    padding: 5px;
-    font-size: 0.8rem;
-    border-radius: 5px;
+    padding: 8px;
+    /* More padding */
+    font-size: 0.9rem;
+    /* Slightly larger text */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Added shadow */
+    transition: transform 0.2s;
+}
+
+.month-card:hover {
+    transform: scale(1.05);
 }
 
 .month-card img {
     width: 100%;
-    height: 50px;
+    height: 100px;
+    /* Increased height */
     object-fit: cover;
+    border-radius: 4px;
+    margin-top: 5px;
 }
 
 /* --- GAME --- */

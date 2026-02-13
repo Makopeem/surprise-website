@@ -1,5 +1,5 @@
 // --- CONFIG ---
-const PASSCODE = "2004";
+const PASSCODE = "081068";
 const START_DATE = new Date("2025-10-08T00:00:00"); // Start date Oct 8, 2025
 
 // --- NAVIGATION ---
@@ -31,14 +31,21 @@ function nextView(viewId) {
 
 // --- LOGIN LOGIC ---
 let currentInput = "";
-const dots = [document.getElementById('dot-1'), document.getElementById('dot-2'), document.getElementById('dot-3'), document.getElementById('dot-4')];
+const dots = [
+    document.getElementById('dot-1'),
+    document.getElementById('dot-2'),
+    document.getElementById('dot-3'),
+    document.getElementById('dot-4'),
+    document.getElementById('dot-5'),
+    document.getElementById('dot-6')
+];
 
 function addDigit(digit) {
-    if (currentInput.length < 4) {
+    if (currentInput.length < 6) {
         currentInput += digit;
         updateDots();
 
-        if (currentInput.length === 4) {
+        if (currentInput.length === 6) {
             checkPasscode();
         }
     }
